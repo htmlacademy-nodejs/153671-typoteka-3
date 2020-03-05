@@ -1,6 +1,7 @@
 # Файлы и папки операционной системы
 .DS_Store
 Thumbs.db
+mocks.json
 
 # Файлы редактора
 .idea
