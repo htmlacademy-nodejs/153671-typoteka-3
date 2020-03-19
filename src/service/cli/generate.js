@@ -77,10 +77,8 @@ module.exports = {
     try {
       await fs.writeFile(FILE_NAME, content);
       console.log(chalk.green(`Операция выполнена успешно. Файл создан.`));
-      process.exit(ExitCode.error);
     } catch (err) {
       console.error(chalk.red(`Невозможно записать данные в файл.`));
-      process.exit(ExitCode.error);
     }
 
   }
