@@ -15,7 +15,7 @@
     "eslint": "eslint --ext .js src/",
     "start": "node ./src/service/service.js",
     "generate": "node ./src/service/service.js --generate",
-    "server": "nodemon ./src/service/service.js --server localhost 3000"
+    "server": "nodemon ./src/service/service.js --server"
   },
   "repository": {
     "type": "git",
