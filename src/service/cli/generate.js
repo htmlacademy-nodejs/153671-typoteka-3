@@ -42,7 +42,7 @@ const generateOffers = (count, titles, categories, sentences) =>
 const readContent = async (filePath) => {
   try{
     const content = await fs.readFile(filePath, `utf8`);
-    return content.split(`/n`);
+    return content.split(`\n`);
   }catch (e) {
     console.log(chalk.red(e));
     return [];
