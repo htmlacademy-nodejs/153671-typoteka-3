@@ -4,7 +4,8 @@
   "description": "Типотека",
   "main": "./src/service/service.js",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "pug": "3.0.0"
   },
   "devDependencies": {
     "chalk": "3.0.0",

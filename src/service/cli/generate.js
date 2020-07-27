@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const fs = require(`fs`).promises;
 const chalk = require(`chalk`);
@@ -19,12 +19,12 @@ const Time = {
   SECONDS: 60,
   MINUTES: 60,
   HOURS: 24,
-  DAYS_LIMIT: 90
+  DAYS_LIMIT: 90,
 };
 
 const DateLimits = {
   min: Date.now() - Time.SECONDS * Time.MINUTES * Time.HOURS * Time.DAYS_LIMIT * Time.MS,
-  max: Date.now()
+  max: Date.now(),
 };
 
 
@@ -40,10 +40,10 @@ const generateOffers = (count, titles, categories, sentences) =>
     }));
 
 const readContent = async (filePath) => {
-  try{
+  try {
     const content = await fs.readFile(filePath, `utf8`);
     return content.split(`\n`);
-  }catch (e) {
+  } catch (e) {
     console.log(chalk.red(e));
     return [];
   }
@@ -69,7 +69,7 @@ module.exports = {
     const [titles, categories, sentences] = await Promise.all([
       readContent(FILE_TITLES_PATH),
       readContent(FILE_CATEGORIES_PATH),
-      readContent(FILE_SENTENCES_PATH)
+      readContent(FILE_SENTENCES_PATH),
     ]);
 
     const content = JSON.stringify(generateOffers(countOffer, titles, categories, sentences));
@@ -81,5 +81,5 @@ module.exports = {
       console.error(chalk.red(`Невозможно записать данные в файл.`));
     }
 
-  }
+  },
 };
