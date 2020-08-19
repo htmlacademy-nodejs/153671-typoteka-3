@@ -1,6 +1,7 @@
 'use strict';
 
 const {Router} = require(`express`);
+// eslint-disable-next-line new-cap
 const myRoutes = Router();
 const {pageContentMy, pageContentMyComments} = require(`../mock`);
 
