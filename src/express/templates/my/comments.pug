@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  main.main-page.main-page--padding
+    section.main-page__publication.publication
+      h1.publication__title Комментарии
+      ul.publication__list
+        each comment in commentList
+          li.publication__list-item(class=(comment == commentList[commentList.length - 1] ? 'publication__list-item--last' : ''))
+            .publication__header
+              img.publication__list-image(src=comment.img, width='20', height='20', alt='Аватар пользователя')
+              b.publication__list-name=comment.name
+              time.publication__item-time(datetime='2019-03-21T20:33')=comment.datetime
+            a.publication__item-text(href='#')=comment.text
+            p.publication__text-strong=comment.fullText
+            button.publication__button.button.button--close-item(type='button')
+              span.visually-hidden Закрыть строку списка
