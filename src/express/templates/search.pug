@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  main
+    section.search-page
+      .search-page__wrapper(class=!searchList.length ? 'search-page__wrapper--empty' : '')
+        h1 Поиск
+        .search.search-page__form
+          form(action='#', method='get')
+            label
+              input(type='text', placeholder='Что ищем?', value=searchWord)
+            button.search__button.button.button--transparent(type='submit') Найти
+          each searchElem in searchList
+            .search__result
+              time.search__date(datetime='2019-03-21T20:33')=searchElem.datetime
+              a.search__link=searchElem.text
+        if !searchList.length
+          p.search-page__empty
+            | Ничего не нашлось

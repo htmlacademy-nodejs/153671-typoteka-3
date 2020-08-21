@@ -1,0 +1,8 @@
+ul.themes(class=(page == 'post') ? 'post__themes' : '')
+  each category, key in categories
+    li.themes__item
+      a.themes__item-link(class=(category.isActive ? 'themes__item-link--active' : '') href=('/articles/category/' + key))=category.name
+        | &nbsp;
+        sup=category.count
+      if page == 'post'
+        button.themes__remove-btn(type='button') Удалить категорию

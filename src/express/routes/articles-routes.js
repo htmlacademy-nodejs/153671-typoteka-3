@@ -1,11 +1,13 @@
 'use strict';
 
 const {Router} = require(`express`);
+// eslint-disable-next-line new-cap
 const articlesRoutes = Router();
+const {pageContentPost, pageContentNewPost, pageContentEditPost, pageContentCategory} = require(`../mock`);
 
-articlesRoutes.get(`/category/:id`, (req, res) => res.send(`/articles/category/${req.params.id}`));
-articlesRoutes.get(`/add`, (req, res) => res.send(`/articles/add`));
-articlesRoutes.get(`/edit/:id`, (req, res) => res.send(`/articles/edit/${req.params.id}`));
-articlesRoutes.get(`/:id`, (req, res) => res.send(`/articles/${req.params.id}`));
+articlesRoutes.get(`/category/:id`, (req, res) => res.render(`articles/articles-by-category`, pageContentCategory));
+articlesRoutes.get(`/add`, (req, res) => res.render(`articles/new-post`, pageContentNewPost));
+articlesRoutes.get(`/edit/:id`, (req, res) => res.render(`articles/new-post`, pageContentEditPost));
+articlesRoutes.get(`/:id`, (req, res) => res.render(`articles/post`, pageContentPost));
 
 module.exports = articlesRoutes;
