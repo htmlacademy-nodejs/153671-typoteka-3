@@ -4,13 +4,16 @@ const fs = require(`fs`).promises;
 const chalk = require(`chalk`);
 const express = require(`express`);
 
-const {HttpCode} = require(`../../constants`);
+const {HttpCode, API_PREFIX} = require(`../../constants`);
+const routes = require(`../api`);
 
 const DEFAULT_PORT = 3000;
 const FILE_NAME = `mocks.json`;
 
 const app = express();
+
 app.use(express.json());
+app.use(API_PREFIX, routes);
 
 let fileContent;
 
@@ -55,5 +58,5 @@ module.exports = {
       console.error(`Произошла ошибка: ${err.message}`);
       process.exit(1);
     }
-  }
+  },
 };
