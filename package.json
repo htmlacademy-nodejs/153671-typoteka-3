@@ -6,20 +6,27 @@
   "dependencies": {
     "express": "4.17.1",
     "nanoid": "3.1.12",
+    "pino-multi-stream": "^5.1.1",
+    "pino-pretty": "^4.2.1",
     "pug": "3.0.0"
   },
   "devDependencies": {
     "chalk": "3.0.0",
     "eslint": "6.8.0",
     "eslint-config-htmlacademy": "0.5.2",
-    "nodemon": "2.0.2"
+    "eslint-plugin-jest": "^24.0.1",
+    "jest": "^26.4.2",
+    "nodemon": "2.0.2",
+    "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "npm run eslint",
+    "test": "npm run eslint & npm run test::rest",
+    "test::rest": "jest .e2e.test.js",
     "eslint": "eslint --ext .js src/",
     "start": "node ./src/service/service.js",
     "generate": "node ./src/service/service.js --generate",
     "server": "nodemon ./src/service/service.js --server",
+    "server::debug": "LOG_LEVEL=debug nodemon ./src/service/service.js --server | pino-pretty",
     "start-front-server": "nodemon ./src/express/index.js"
   },
   "repository": {
