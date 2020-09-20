@@ -26,7 +26,7 @@
     "start": "node ./src/service/service.js",
     "generate": "node ./src/service/service.js --generate",
     "server": "nodemon ./src/service/service.js --server",
-    "server::debug": "LOG_LEVEL=debug nodemon ./src/service/service.js --server | pino-pretty",
+    "server::debug": "LOG_LEVEL=debug nodemon ./src/service/service.js --server",
     "start-front-server": "nodemon ./src/express/index.js"
   },
   "repository": {
