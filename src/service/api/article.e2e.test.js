@@ -67,7 +67,7 @@ const articleToDelete = {
 
 
 const appendMockArticle = (file, mockArticle) => {
-  let mocks = JSON.parse(fs.readFileSync(file));
+  const mocks = JSON.parse(fs.readFileSync(file));
   mocks.push(mockArticle);
   fs.writeFileSync(file, JSON.stringify(mocks));
 };
