@@ -5,6 +5,7 @@ const chalk = require(`chalk`);
 
 const {getRandomInt, shuffle} = require(`../../utils`);
 const {ExitCode, MAX_ID_LENGTH} = require(`../../constants`);
+const {logger} = require(`../lib/logger`);
 const {nanoid} = require(`nanoid`);
 
 const DEFAULT_COUNT = 1;
@@ -57,7 +58,7 @@ const readContent = async (filePath) => {
     const content = await fs.readFile(filePath, `utf8`);
     return content.split(`\n`);
   } catch (e) {
-    console.log(chalk.red(e));
+    logger.info(chalk.red(e));
     return [];
   }
 };
@@ -67,13 +68,13 @@ module.exports = {
   async run(args) {
     const [count] = args;
     if (count !== undefined && isNaN(count)) {
-      console.log(chalk.red(`В качестве параметра необходимо ввести число.`));
+      logger.info(chalk.red(`В качестве параметра необходимо ввести число.`));
       process.exit(ExitCode.error);
     }
 
     const countArticle = Number(count) || DEFAULT_COUNT;
     if (countArticle > MAX_COUNT) {
-      console.log(chalk.red(`Не больше 1000 публикаций.`));
+      logger.info(chalk.red(`Не больше 1000 публикаций.`));
       process.exit(ExitCode.error);
     }
 
@@ -87,9 +88,9 @@ module.exports = {
 
     try {
       await fs.writeFile(FILE_NAME, content);
-      console.log(chalk.green(`Операция выполнена успешно. Файл создан.`));
+      logger.info(chalk.green(`Операция выполнена успешно. Файл создан.`));
     } catch (err) {
-      console.error(chalk.red(`Невозможно записать данные в файл.`));
+      logger.error(chalk.red(`Невозможно записать данные в файл.`));
     }
 
   },
