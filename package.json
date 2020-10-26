@@ -4,8 +4,13 @@
   "description": "Типотека",
   "main": "./src/service/service.js",
   "dependencies": {
+    "axios": "0.20.0",
+    "body-parser": "1.19.0",
     "express": "4.17.1",
-    "fs-extra": "^9.0.1",
+    "express-validator": "6.6.1",
+    "fs-extra": "9.0.1",
+    "moment": "^2.29.1",
+    "multer": "1.4.2",
     "nanoid": "3.1.12",
     "pino-multi-stream": "5.1.1",
     "pino-pretty": "4.2.1",
@@ -25,7 +30,7 @@
     "test::rest": "jest .e2e.test.js",
     "eslint": "eslint --ext .js src/",
     "start": "node ./src/service/service.js",
-    "generate": "node ./src/service/service.js --generate",
+    "generate": "node ./src/service/service.js --generate 5",
     "server": "nodemon ./src/service/service.js --server",
     "server::debug": "LOG_LEVEL=debug nodemon ./src/service/service.js --server",
     "start-front-server": "nodemon ./src/express/index.js"
