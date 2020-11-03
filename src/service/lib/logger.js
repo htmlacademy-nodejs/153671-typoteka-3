@@ -7,7 +7,7 @@ const fs = require(`fs-extra`);
 const appDir = path.dirname(require.main.filename);
 
 const PATH_LOGS_DIR = appDir + `/logs`;
-const PATH_LOGS_FILE = PATH_LOGS_DIR + `logs.txt`;
+const PATH_LOGS_FILE = PATH_LOGS_DIR + `/logs.txt`;
 
 if (!fs.existsSync(PATH_LOGS_DIR)) {
   fs.mkdirSync(PATH_LOGS_DIR);

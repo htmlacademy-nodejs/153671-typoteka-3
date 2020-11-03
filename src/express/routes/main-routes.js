@@ -3,8 +3,8 @@
 const {Router} = require(`express`);
 // eslint-disable-next-line new-cap
 const mainRouter = Router();
-const Article = require(`../rest/Article`);
-const Search = require(`../rest/Search`);
+const Article = require(`../rest/article`);
+const Search = require(`../rest/search`);
 const {
   pageContentMain,
   pageContentAllCategories,

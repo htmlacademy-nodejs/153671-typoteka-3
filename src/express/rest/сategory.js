@@ -1,11 +1,11 @@
 'use strict';
 const {client} = require(`./client.js`);
 
-class Category {
+class Ategory {
   static async getAll() {
     const res = await client.get(`/categories`);
     return res.data;
   }
 }
 
-module.exports = Category;
+module.exports = Ategory;
