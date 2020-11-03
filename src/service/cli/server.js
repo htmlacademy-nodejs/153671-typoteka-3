@@ -4,11 +4,11 @@ const fs = require(`fs`).promises;
 const chalk = require(`chalk`);
 const express = require(`express`);
 
-const {HttpCode, API_PREFIX} = require(`../../constants`);
+const {HttpCode, API_PREFIX, DEFAULT_PORT} = require(`../../constants`);
 const createApi = require(`../api`);
 const {logger} = require(`../lib/logger`);
 
-const DEFAULT_PORT = 3000;
+
 const FILE_NAME = `mocks.json`;
 
 const createApp = async () => {

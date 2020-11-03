@@ -76,7 +76,7 @@ const pageContentMain = {
   ],
   postList: [
     {
-      breadcrumbs: [`Дизайн`, `Удаленная работа`],
+      category: [`Дизайн`, `Удаленная работа`],
       img: {
         backgrounds: {
           src1: `/img/skyscraper@1x.jpg`,
@@ -91,7 +91,7 @@ const pageContentMain = {
       commentCount: 12
     },
     {
-      breadcrumbs: [`Фриланс`],
+      category: [`Фриланс`],
       img: {
         backgrounds: {
           src1: `/img/sea@1x.jpg`,
@@ -106,7 +106,7 @@ const pageContentMain = {
       commentCount: 12
     },
     {
-      breadcrumbs: [`Фриланс`],
+      category: [`Фриланс`],
       img: {
         backgrounds: {
           src1: `/img/sea@1x.jpg`,
@@ -120,21 +120,8 @@ const pageContentMain = {
         А в этой заметке я расскажу про заклинание, которое от таких писем помогает.`,
       commentCount: 12
     },
-    // {
-    //   breadcrumbs: [`Фриланс`],
-    //   img: null,
-    //   datetime: `21.03.2019, 20:33`,
-    //   title: `Путин подписал закон о предустановке российских приложений на
-    //     смартфоны и другую
-    //     электронику`,
-    //   previewText: `Президент России Владимир Путин подписал закон об обязательной предустановке
-    //     российского программного
-    //     обеспечения на электронную технику, продаваемую в России. Документ опубликован на официальном сайте
-    //     правовой информации.`,
-    //   commentCount: 12
-    // },
     {
-      breadcrumbs: [`Дизайн`],
+      category: [`Дизайн`],
       img: {
         backgrounds: {
           src1: `/img/forest@1x.jpg`,
@@ -261,10 +248,20 @@ const pageContentNewPost = {
     header: ``,
     img: ``,
     datetime: `21.03.2019`,
-    categories: [],
+    category: [
+      `Деревья`,
+      `За жизнь`,
+      `Без рамки`,
+      `Разное`,
+      `IT`,
+      `Музыка`,
+      `Кино`,
+      `Программирование`,
+      `Железо`
+    ],
     text: ``,
     fullText: ``
-  }
+  },
 };
 
 const pageContentEditPost = {
@@ -323,7 +320,7 @@ const pageContentCategory = {
   ],
   postList: [
     {
-      breadcrumbs: [`Дизайн`],
+      category: [`Дизайн`],
       img: {
         backgrounds: {
           src1: `/img/skyscraper@1x.jpg`,
@@ -338,7 +335,7 @@ const pageContentCategory = {
       commentCount: 12
     },
     {
-      breadcrumbs: [`Фриланс`],
+      category: [`Фриланс`],
       img: {
         backgrounds: {
           src1: `/img/sea@1x.jpg`,
@@ -353,7 +350,7 @@ const pageContentCategory = {
       commentCount: 12
     },
     {
-      breadcrumbs: [`Фриланс`],
+      category: [`Фриланс`],
       img: {
         backgrounds: {
           src1: `/img/sea@1x.jpg`,
@@ -368,7 +365,7 @@ const pageContentCategory = {
       commentCount: 12
     },
     {
-      breadcrumbs: [`Дизайн`],
+      category: [`Дизайн`],
       img: {
         backgrounds: {
           src1: `/img/forest@1x.jpg`,
@@ -475,17 +472,6 @@ const pageContentSearch = {
   isAuth: true,
   title: `Типотека`,
   searchWord: `Путешешствия`,
-  searchList: [
-    {
-      datetime: `21.03.2019, 20:33`,
-      text: `Huawei открыла в России <b>путешествия</b> на смартфон Mate 30 Pro без сервисов Google`
-    },
-    {
-      datetime: `21.03.2019, 20:33`,
-      text: `«Яндекс.Метрика» запустила <b>путешествия</b> сервис для оценки эффективности
-      баннеров и видеорекламы в реальном времени`
-    }
-  ]
 };
 
 const pageContentRegister = {

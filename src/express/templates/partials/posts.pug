@@ -2,15 +2,15 @@ ul.preview__list
   each post in postList
     li.preview__item(class=!post.img ? 'preview__item--noimage' : '')
       ul.preview__breadcrumbs
-        each breadcrumb in post.breadcrumbs
+        each category in post.category
           li.preview__breadcrumbs-item
-            a.preview__breadcrumbs-link(href='#')=breadcrumb
+            a.preview__breadcrumbs-link(href='#')=category
       if post.img
         .preview__background
           img.preview__background-image(src=post.img.backgrounds.src1, width='460', height='240', srcset=post.img.backgrounds.src2, alt=post.img.imgText)
       time.preview__time(datetime='2019-03-21T20:33')=post.datetime
       h3.preview__name
-        a.preview__name-link(href='/articles/1')=post.title
+        a.preview__name-link(href='/articles/'+post.id)=post.title
       p.preview__text=post.previewText
       a.preview__comment(href='#')
         | Комментарии
