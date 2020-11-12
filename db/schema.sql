@@ -17,11 +17,11 @@ CREATE TABLE public.avatars
 CREATE TABLE public.authors
 (
     id        SERIAL PRIMARY KEY,
-    firstname VARCHAR(50) NOT NULL,
-    lastname  VARCHAR(50) NOT NULL,
-    email     VARCHAR(50) NOT NULL,
-    password  VARCHAR(20) NOT NULL,
-    avatar_id INTEGER     NOT NULL,
+    firstname VARCHAR(50)  NOT NULL,
+    lastname  VARCHAR(50)  NOT NULL,
+    email     VARCHAR(255) NOT NULL,
+    password  VARCHAR(20)  NOT NULL,
+    avatar_id INTEGER      NOT NULL,
     FOREIGN KEY (avatar_id) REFERENCES avatars (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
@@ -34,7 +34,7 @@ CREATE TABLE public.articles
     announce     VARCHAR(500) NOT NULL,
     full_text    TEXT         NOT NULL,
     picture      VARCHAR(50)  NOT NULL,
-    created_date DATE         NOT NULL,
+    created_date DATE         NOT NULL default current_date,
     author_id    INTEGER      NOT NULL,
     FOREIGN KEY (author_id) REFERENCES authors (id)
         ON DELETE CASCADE
@@ -44,10 +44,10 @@ CREATE TABLE public.articles
 CREATE TABLE public.comments
 (
     id           SERIAL PRIMARY KEY,
-    comment      VARCHAR(200) NOT NULL,
-    created_date DATE         NOT NULL,
-    author_id    INTEGER      NOT NULL,
-    article_id   INTEGER      NOT NULL,
+    comment      TEXT    NOT NULL,
+    created_date DATE    NOT NULL default current_date,
+    author_id    INTEGER NOT NULL,
+    article_id   INTEGER NOT NULL,
     FOREIGN KEY (author_id) REFERENCES authors (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
